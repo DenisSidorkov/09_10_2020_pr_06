@@ -16,11 +16,30 @@ namespace _09_10_2020_pr_06
       this.DateOfBirth = DateOfBirth;
     }
 
-    public Person() { first_name = "John"; second_name = "Smith"; DateOfBirth = new DateTime(1970, 1, 1);}
+    public Person() { first_name = "John"; second_name = "Smith"; DateOfBirth = new DateTime(1970, 1, 1); }
     public string First_name { get; set; }
     public string Second_name { get; set; }
-    public string _DateOfBirth { get; set; }
+    public string _DateOfBirth
+    {
+      get {
+        return _DateOfBirth;
+      }
+
+      set {
+        _DateOfBirth = value;
+      }
+    }
+    public override string ToString()
+    {
+      return first_name + " " + second_name + ", " + DateOfBirth;
+    }
+
+    public virtual string ToShortString()
+    {
+      return first_name + " " + second_name;
+    }
   }
+  
   class Program
   {
     static void Main(string[] args)
